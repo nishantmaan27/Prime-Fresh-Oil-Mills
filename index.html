@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prime Fresh Oil Mills — quality mustard oil and oilseed products.">
+  <title>Prime Fresh Oil Mills | Pure Goodness</title>
+  <style>
+    :root {
+      --green: #075f3c;
+      --green-dark: #06472f;
+      --green-light: #eaf4eb;
+      --gold: #d9a91d;
+      --gold-light: #fff4d0;
+      --cream: #fffdf7;
+      --ink: #183329;
+      --muted: #64736b;
+      --white: #fff;
+      --shadow: 0 18px 45px rgba(16, 66, 43, .11);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1160px, 91%); margin: auto; }
+    .topbar { background: var(--green-dark); color: #fff; text-align: center; font-size: .83rem; padding: 8px 14px; letter-spacing: .04em; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,253,247,.94); backdrop-filter: blur(12px); border-bottom: 1px solid #e9eadf; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 88px; }
+    .brand { display: flex; align-items: center; gap: 13px; margin-left: auto; text-align: right; }
+    .brand img { width: 76px; height: 76px; object-fit: contain; border-radius: 50%; }
+    .brand-name { font-size: clamp(1rem, 2.3vw, 1.35rem); line-height: 1.15; font-weight: 900; color: var(--green); letter-spacing: .035em; }
+    .brand-tag { color: #8d7118; font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; margin-top: 5px; }
+    .navlinks { display: flex; gap: 22px; align-items: center; font-size: .91rem; font-weight: 650; }
+    .navlinks a:hover { color: #b28708; }
+    .nav-cta, .btn { display: inline-flex; justify-content: center; align-items: center; border: 0; border-radius: 999px; background: var(--green); color: #fff; padding: 12px 21px; font-weight: 750; cursor: pointer; transition: .2s; }
+    .nav-cta:hover, .btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .hero { overflow: hidden; position: relative; padding: 80px 0 76px; background: radial-gradient(circle at 82% 22%, #fff0b9 0, transparent 28%), linear-gradient(130deg, #f5f8ec, #fffaf0 65%, #f9efce); }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 54px; align-items: center; }
+    .eyebrow { color: #977509; text-transform: uppercase; letter-spacing: .18em; font-weight: 800; font-size: .78rem; margin-bottom: 16px; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.3rem); letter-spacing: -.055em; line-height: .99; max-width: 680px; }
+    h1 span { color: var(--green); }
+    .hero p { max-width: 570px; margin: 23px 0 28px; color: #58675e; font-size: 1.08rem; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .btn.secondary { background: transparent; color: var(--green); border: 1.5px solid #a8b9a9; }
+    .btn.secondary:hover { background: var(--green-light); }
+    .hero-art { position: relative; min-height: 390px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 8px 0 62px; }
+    .hero-logo-panel { width: min(100%, 470px); background: rgba(255,255,255,.96); border: 1px solid #eee5c7; border-radius: 28px 28px 28px 8px; box-shadow: 0 24px 60px rgba(16,66,43,.12); padding: 24px 28px 25px; text-align: center; }
+    .hero-logo-panel img { width: 100%; max-width: 390px; max-height: 260px; object-fit: contain; margin: 0 auto; }
+    .logo-divider { width: 72px; height: 4px; border-radius: 4px; background: var(--gold); margin: 9px auto 14px; }
+    .logo-motto { color: var(--green-dark); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 2vw, 1.55rem); font-weight: 700; line-height: 1.35; }
+    .logo-subline { color: #7b681f; margin-top: 9px; font-size: .8rem; font-weight: 750; letter-spacing: .04em; }
+    .logo-subline span { color: var(--green); padding: 0 5px; }
+    .floating-note { position: relative; align-self: flex-end; margin-right: 4px; margin-top: -7px; padding: 15px 20px; background: #fff; border: 1px solid #e9e8d9; border-radius: 18px 18px 18px 6px; box-shadow: var(--shadow); font-weight: 800; color: var(--green); }
+    .floating-note span { display: block; color: #65736a; font-weight: 500; font-size: .84rem; }
+    .brand-promise { margin-top: 18px; padding: 13px 16px; border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; background: rgba(255,255,255,.55); color: var(--green-dark); font-weight: 750; max-width: 540px; }
+    .delivery { background: #fff; }
+    .delivery-banner { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 34px; color: #fff; border-radius: 32px 32px 32px 8px; background: linear-gradient(125deg, #075f3c, #0b7950); box-shadow: var(--shadow); }
+    .delivery-banner h3 { font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.1; }
+    .delivery-banner p { margin-top: 9px; color: #dce9df; max-width: 650px; }
+    .delivery-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+    .delivery-step { padding: 22px; background: #f4f6ed; border-radius: 22px 22px 22px 7px; }
+    .delivery-step .icon { font-size: 1.7rem; }
+    .delivery-step h4 { margin: 7px 0 5px; }
+    .delivery-step p { color: var(--muted); font-size: .9rem; }
+    .product-card .availability { display: inline-block; margin-top: 10px; font-size: .75rem; color: #7b6514; background: #fff4d0; border-radius: 99px; padding: 5px 9px; }
+    .delivery-disclaimer { color: #778078; font-size: .82rem; margin-top: 16px; }
+
+    section { padding: 78px 0; }
+    .section-head { max-width: 720px; margin: 0 auto 38px; text-align: center; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.04em; line-height: 1.1; }
+    .section-head p { color: var(--muted); margin-top: 13px; }
+    .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: -1px; }
+    .stat { padding: 25px 18px; background: #fff; border: 1px solid #edf0e6; border-radius: 23px 23px 23px 7px; box-shadow: 0 10px 30px #193b2410; }
+    .stat .number { color: var(--gold); font-size: 1.65rem; font-weight: 900; }
+    .stat h3 { font-size: 1rem; margin: 7px 0; }
+    .stat p { color: var(--muted); font-size: .88rem; }
+    .funding { background: var(--green); color: #fff; }
+    .funding-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 42px; align-items: center; }
+    .funding h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.04em; }
+    .funding p { color: #dce9df; margin-top: 16px; }
+    .funding-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .fund-card { padding: 22px; border-radius: 22px; background: #ffffff12; border: 1px solid #ffffff35; }
+    .fund-card .icon { font-size: 1.6rem; }
+    .fund-card h3 { margin: 8px 0 5px; }
+    .fund-card p { margin: 0; font-size: .88rem; }
+    .notice { font-size: .8rem !important; opacity: .8; }
+    .ingredients { background: #f4f6ed; }
+    .ingredient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 23px; }
+    .ingredient-card { background: #fff; overflow: hidden; border-radius: 34px 34px 34px 9px; box-shadow: var(--shadow); transition: transform .25s; }
+    .ingredient-card:hover, .product-card:hover { transform: translateY(-5px); }
+    .ingredient-card img { width: 100%; height: 230px; object-fit: cover; }
+    .ingredient-body { padding: 23px; }
+    .tag { display: inline-block; color: var(--green); background: var(--green-light); border-radius: 99px; padding: 5px 10px; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .ingredient-body h3 { margin: 11px 0 7px; font-size: 1.35rem; }
+    .ingredient-body p { color: var(--muted); font-size: .93rem; }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product-card { position: relative; border: 1px solid #e8ecdf; border-radius: 30px 30px 30px 8px; background: #fff; padding: 26px; transition: transform .25s; }
+    .product-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .product-icon { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 20px 20px 20px 6px; background: var(--gold-light); font-size: 1.8rem; }
+    .price { font-size: 1.25rem; font-weight: 900; color: var(--green); white-space: nowrap; }
+    .product-card h3 { margin: 19px 0 8px; font-size: 1.3rem; }
+    .product-card p { color: var(--muted); font-size: .92rem; }
+    .product-card ul { list-style: none; margin: 15px 0 20px; font-size: .88rem; color: #42554a; }
+    .product-card li { margin: 6px 0; }
+    .product-card li::before { content: "✓"; color: var(--green); font-weight: 900; margin-right: 8px; }
+    .product-card .btn { width: 100%; padding: 11px; }
+    .price-note { text-align: center; color: #7a817a; font-size: .82rem; margin-top: 20px; }
+    .benefits { background: var(--gold-light); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; }
+    .benefit { background: #fffdf7; border-radius: 25px 25px 25px 8px; padding: 25px; }
+    .benefit .icon { font-size: 1.8rem; }
+    .benefit h3 { margin: 11px 0 6px; }
+    .benefit p { color: var(--muted); font-size: .9rem; }
+    .contact { padding: 68px 0; }
+    .contact-box { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 40px; border-radius: 34px 34px 34px 8px; background: linear-gradient(120deg, #e9f3e8, #fff4cf); }
+    .contact-box h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1; }
+    .contact-box p { margin-top: 10px; color: var(--muted); }
+    footer { background: #073d2b; color: #e7f0e8; padding: 30px 0; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .88rem; }
+    footer span { color: #f0d16c; }
+    .mobile-menu { display: none; }
+    @media (max-width: 900px) {
+      .hero-grid, .funding-grid { grid-template-columns: 1fr; }
+      .delivery-banner { grid-template-columns: 1fr; }
+      .delivery-steps { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; }
+      .hero-art { min-height: auto; padding: 18px 0 50px; }
+      .hero-logo-panel { padding: 18px; }
+      .hero-logo-panel img { max-height: 210px; }
+      .floating-note { align-self: center; margin-right: 0; text-align: center; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:last-child { grid-column: span 2; }
+      .ingredient-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+      .navlinks { gap: 12px; font-size: .82rem; }
+    }
+    @media (max-width: 600px) {
+      .nav { min-height: 74px; }
+      .brand img { width: 57px; height: 57px; }
+      .brand-tag { font-size: .6rem; }
+      .navlinks { display: none; }
+      .mobile-menu { display: inline-flex; }
+      .hero-grid { gap: 15px; }
+      .hero-art { min-height: auto; padding-bottom: 45px; }
+      .hero-logo-panel { border-radius: 22px 22px 22px 7px; padding: 15px; }
+      .hero-logo-panel img { max-height: 170px; }
+      .logo-motto { font-size: 1.12rem; }
+      .logo-subline { font-size: .72rem; }
+      section { padding: 58px 0; }
+      .stats, .ingredient-grid, .products-grid, .benefit-grid, .funding-cards { grid-template-columns: 1fr; }
+      .stat:last-child { grid-column: auto; }
+      .contact-box { align-items: flex-start; flex-direction: column; padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">GOODNESS FROM THE SEED UP · PRIME FRESH OIL MILLS</div>
+  <header>
+    <div class="wrap nav">
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#ingredients">Raw materials</a><a href="#products">Products</a><a href="#delivery">Delivery</a><a href="#benefits">Benefits</a>
+      </nav>
+      <a class="nav-cta mobile-menu" href="#products">Explore products</a>
+      <a class="brand" href="#home" aria-label="Prime Fresh Oil Mills home">
+        <div><div class="brand-name">PRIME FRESH OIL MILLS</div><div class="brand-tag">Pure goodness · Honest quality</div></div>
+        <img src="assets/logo.jpg" alt="Prime Fresh Oil Mills company logo">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">From nature, with care</div>
+          <h1>Rooted in nature.<br><span>Made for better living.</span></h1>
+          <p>Discover the world of oilseeds, carefully processed oils and useful by-products. Prime Fresh Oil Mills brings traditional ingredients and modern presentation together.</p>
+          <div class="brand-promise">“Honest harvests. Thoughtful processing. A brighter table for every family.”</div>
+          <div class="hero-actions"><a class="btn" href="#products">Explore our products ↗</a><a class="btn secondary" href="#about">Get to know us</a></div>
+        </div>
+        <div class="hero-art" aria-label="Prime Fresh Oil Mills brand presentation">
+          <div class="hero-logo-panel">
+            <img src="assets/logo.jpg" alt="Prime Fresh Oil Mills company logo">
+            <div class="logo-divider"></div>
+            <p class="logo-motto">From the strength of the seed,<br>we nourish tomorrow.</p>
+            <p class="logo-subline">Goodness for homes <span>•</span> Value for growers</p>
+          </div>
+          <div class="floating-note">Honest harvests<span>Thoughtful processing. Better nourishment.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Our story at a glance</div><h2>Built around quality, trust and growth.</h2><p>Use these five highlights to tell customers what makes your business special. Replace the sample statements with your verified company facts.</p></div>
+        <div class="stats">
+          <article class="stat"><div class="number">01</div><h3>Quality-first sourcing</h3><p>Choose raw materials from suppliers you trust.</p></article>
+          <article class="stat"><div class="number">02</div><h3>Careful processing</h3><p>Focus on cleanliness, consistency and product care.</p></article>
+          <article class="stat"><div class="number">03</div><h3>Product variety</h3><p>Oil, oilseeds and useful oilseed cake products.</p></article>
+          <article class="stat"><div class="number">04</div><h3>Customer relationships</h3><p>Build long-term partnerships through reliable service.</p></article>
+          <article class="stat"><div class="number">05</div><h3>Responsible growth</h3><p>Work toward efficient operations and less waste.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="funding" id="funding">
+      <div class="wrap funding-grid">
+        <div><div class="eyebrow" style="color:#f3d56c">How the business is supported</div><h2>Growing with the right resources.</h2><p>Transparency matters. Use this section to explain how the mill is funded and where investment is directed. Select only the sources that genuinely apply to your company.</p></div>
+        <div class="funding-cards">
+          <article class="fund-card"><div class="icon">🏭</div><h3>Owner investment</h3><p>Founder or promoter capital used for equipment and setup.</p></article>
+          <article class="fund-card"><div class="icon">🤝</div><h3>Business partnerships</h3><p>Commercial partnerships and supplier relationships.</p></article>
+          <article class="fund-card"><div class="icon">🏦</div><h3>Bank finance</h3><p>Include only if your business has a verified loan or credit facility.</p></article>
+          <article class="fund-card"><div class="icon">🌱</div><h3>Reinvestment</h3><p>Profits reinvested in operations, quality and growth.</p></article>
+          <p class="notice">These are examples, not claims about Prime Fresh Oil Mills. Edit this section to match your actual funding sources.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ingredients" id="ingredients">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">From seed to useful product</div><h2>The materials behind the process.</h2><p>Oil production begins with carefully selected raw materials. Here are example ingredients and by-products; add the exact materials your mill uses.</p></div>
+        <div class="ingredient-grid">
+          <article class="ingredient-card"><img src="assets/mustard-seeds.jpg" alt="Brown and black mustard seeds in a wooden scoop"><div class="ingredient-body"><span class="tag">Raw material</span><h3>Mustard Seeds</h3><p>The key raw ingredient for mustard oil. Seed quality, storage and cleaning all help support a consistent final product.</p></div></article>
+          <article class="ingredient-card"><img src="assets/mustard-cake.jpg" alt="Pressed mustard oil cake pieces"><div class="ingredient-body"><span class="tag">By-product</span><h3>Mustard Oil Cake</h3><p>The solid material left after oil extraction. Its appropriate use depends on processing quality and suitability for the intended application.</p></div></article>
+          <article class="ingredient-card"><div style="height:230px;background:linear-gradient(140deg,#d7b04a,#f7e7a5);display:grid;place-items:center;font-size:5rem" role="img" aria-label="Golden oil drop illustration">💧</div><div class="ingredient-body"><span class="tag">Finished output</span><h3>Mustard Oil</h3><p>Oil extracted from mustard seeds and prepared for packing. List your actual extraction and quality-control method here.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Shop our range</div><h2>Products for everyday needs.</h2><p>Each product card includes a sample price, ingredient information and a quick enquiry button.</p></div>
+        <div class="products-grid">
+          <article class="product-card"><div class="product-top"><div class="product-icon">🫙</div><div class="price">₹180 / L</div></div><h3>Mustard Oil</h3><p>A versatile cooking oil with the distinctive character of mustard.</p><ul><li>Ingredient: mustard seed oil</li><li>Pack size shown: 1 litre</li><li>Store sealed in a cool, dry place</li></ul><a class="btn" href="#contact" data-product="Mustard Oil">Enquire about product</a></article>
+          <article class="product-card"><div class="product-top"><div class="product-icon">🌾</div><div class="price">₹70 / kg</div></div><h3>Mustard Seeds</h3><p>Whole mustard seeds for food preparation or oil-mill processing.</p><ul><li>Ingredient: whole mustard seeds</li><li>Pack size shown: 1 kg</li><li>Keep dry and protected from moisture</li></ul><a class="btn" href="#contact" data-product="Mustard Seeds">Enquire about product</a></article>
+          <article class="product-card"><div class="product-top"><div class="product-icon">🌿</div><div class="price">₹25 / kg</div></div><h3>Mustard Oil Cake</h3><p>Oilseed cake by-product for suitable agricultural uses.</p><ul><li>Ingredient: pressed mustard seed residue</li><li>Pack size shown: 1 kg</li><li>Use only for an appropriate, verified purpose</li></ul><span class="availability">Bulk enquiry available</span><a class="btn" href="#contact" data-product="Mustard Oil Cake">Enquire about product</a></article>
+          <article class="product-card"><div class="product-top"><div class="product-icon">🥜</div><div class="price">₹— / L</div></div><h3>Groundnut Oil</h3><p>A possible addition to the catalogue for customers seeking another cooking oil.</p><ul><li>Ingredient: groundnut oil, if stocked</li><li>Pack sizes: confirm with mill</li><li>Check availability before ordering</li></ul><span class="availability">Confirm product range</span><a class="btn" href="#contact" data-product="Groundnut Oil">Ask about availability</a></article>
+          <article class="product-card"><div class="product-top"><div class="product-icon">🌻</div><div class="price">₹— / L</div></div><h3>Sunflower Oil</h3><p>Catalogue placeholder for a sunflower oil product, if supplied by your business.</p><ul><li>Ingredient: sunflower oil, if stocked</li><li>Pack sizes: confirm with mill</li><li>Product details subject to confirmation</li></ul><span class="availability">Confirm product range</span><a class="btn" href="#contact" data-product="Sunflower Oil">Ask about availability</a></article>
+          <article class="product-card"><div class="product-top"><div class="product-icon">🌾</div><div class="price">₹— / kg</div></div><h3>Bulk Mustard Seeds</h3><p>Seed supply option for traders, processors and business customers.</p><ul><li>Ingredient: whole mustard seeds</li><li>Bulk quantity: on request</li><li>Grade and packing: confirm before dispatch</li></ul><span class="availability">Bulk enquiry available</span><a class="btn" href="#contact" data-product="Bulk Mustard Seeds">Request a bulk quote</a></article>
+        </div>
+        <p class="price-note">Important: ₹180/L, ₹70/kg and ₹25/kg are sample prices. A dash (—) means the price must be confirmed. New catalogue entries are placeholders, not claims that these products are currently stocked. Update prices, availability, pack sizes and product details before publishing.</p>
+      </div>
+    </section>
+
+
+    <section class="delivery" id="delivery">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">From our mill to your door</div><h2>Every order deserves careful handling.</h2><p>Use this section to explain how retail and bulk orders are packed, confirmed and dispatched. Only promise delivery areas and timelines your team can meet.</p></div>
+        <div class="delivery-banner">
+          <div><h3>Ready for retail, trade and bulk enquiries.</h3><p>Ask us about available stock, package sizes, dispatch options and delivery coverage. Our team can confirm the details before your order is placed.</p></div>
+          <a class="btn" href="#contact" style="background:#f4d76c;color:#173c2b">Plan an order ↗</a>
+        </div>
+        <div class="delivery-steps">
+          <article class="delivery-step"><div class="icon">📦</div><h4>1. Order confirmation</h4><p>Confirm product, quantity, packing, price and destination before payment or dispatch.</p></article>
+          <article class="delivery-step"><div class="icon">🛻</div><h4>2. Packing & dispatch</h4><p>Use suitable packaging and share dispatch details once the order has actually shipped.</p></article>
+          <article class="delivery-step"><div class="icon">📍</div><h4>3. Delivery updates</h4><p>Provide a realistic estimated arrival date and tracking details where available.</p></article>
+        </div>
+        <p class="delivery-disclaimer">Delivery locations, charges, dispatch time and minimum order quantities must be confirmed by Prime Fresh Oil Mills. This demo page does not process payments or create shipping labels.</p>
+      </div>
+    </section>
+
+    <section class="benefits" id="benefits">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Why oil matters</div><h2>Useful benefits, responsibly explained.</h2><p>Benefits depend on the specific oil, how it is used and the overall diet. Avoid treating any oil as a cure or making unsupported health claims.</p></div>
+        <div class="benefit-grid">
+          <article class="benefit"><div class="icon">🍳</div><h3>Cooking versatility</h3><p>Mustard oil is used in a range of regional cooking traditions. Follow local food guidance for edible use.</p></article>
+          <article class="benefit"><div class="icon">🧾</div><h3>Clear product details</h3><p>Visible ingredients, pack sizes, storage instructions and prices help customers make informed choices.</p></article>
+          <article class="benefit"><div class="icon">♻️</div><h3>By-product use</h3><p>Appropriate oilseed cake use can help make use of material left after extraction.</p></article>
+          <article class="benefit"><div class="icon">🌱</div><h3>Responsible sourcing</h3><p>Supplier checks, good storage and careful handling support product consistency and reduce avoidable waste.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-box"><div><div class="eyebrow">Let's do business</div><h2>Looking for a product or bulk supply?</h2><p>Contact Prime Fresh Oil Mills to ask about current availability, packaging and wholesale rates.</p></div><a class="btn" id="contactButton" href="mailto:your-email@example.com?subject=Prime%20Fresh%20Oil%20Mills%20Product%20Enquiry">Contact us ↗</a></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><div><strong>PRIME FRESH OIL MILLS</strong><br><span>Pure goodness · Honest quality</span></div><div>© <span id="year"></span> Prime Fresh Oil Mills. All rights reserved.</div><div>Replace demo contact details before launch.</div></div></footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const email = "your-email@example.com"; // Replace with the company's real email address.
+    document.querySelectorAll("[data-product]").forEach(link => {
+      link.addEventListener("click", () => {
+        const product = link.dataset.product;
+        document.getElementById("contactButton").href =
+          "mailto:" + email + "?subject=" + encodeURIComponent("Enquiry about " + product);
+      });
+    });
+  </script>
+</body>
+</html>
